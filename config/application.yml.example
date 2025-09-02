@@ -1,0 +1,134 @@
+defaults: &defaults
+  lms_base_url: <%= "#{ENV['LMS_BASE_URL']}" %>
+  lms_api_base_url: <%= "#{ENV['LMS_BASE_URL']}/api/v1" %>
+  auth_token: <%= ENV["AUTH_TOKEN"] %>
+  internal_allowed_ips: <%= ENV['INTERNAL_ALLOWED_IPS'].to_s.split(',') %>
+  internal_apis_ninja_backend_token: <%= ENV["INTERNAL_APIS_NINJA_BACKEND_TOKEN"] %>
+  internal_apis_lti_token: <%= ENV["INTERNAL_APIS_LTI_TOKEN"] %>
+  lti_base_url: <%= ENV['LTI_BASE_URL'] %>
+  lms_base_url: <%= ENV['LMS_BASE_URL'] %>
+  lti_cloudfront_url: <%= ENV["LTI_BUCKET_CLOUDFRONT_URL"] %>
+  google_client_id: <%= ENV['GOOGLE_CLIENT_ID'] %>
+  google_client_secret: <%= ENV['GOOGLE_CLIENT_SECRET'] %>
+  published_calendar_spreadsheet_url: <%= ENV["PUBLISHED_CALENDAR_SPREADSHEET_URL"] %>
+  lti_hostname: https://mgninja.iac-mygreatlearning.net
+  lms_hostname: https://mgolympus.iac-mygreatlearning.net
+  website_hostname: https://w3migration.iac-mygreatlearning.net
+  prod_asset_cloudfront_url: <%= ENV['PROD_ASSET_CLOUDFRONT_URL'] %>
+  olympus_sendgrid_api_key: <%= ENV["OLYMPUS_SENDGRID_API_KEY"] %>
+  aws_raven_client_id: <%= ENV["AWS_RAVEN_CLIENT_ID"] %>
+  aws_raven_api_key: <%= ENV["AWS_RAVEN_API_KEY"] %>
+  aws_raven_client_secret: <%= ENV["AWS_RAVEN_CLIENT_SECRET"] %>
+  eportfolio_base_url: 'https://eportfolio.iac-mygreatlearning.net'
+  reform_base_url: 'https://mgreform.iac-mygreatlearning.net'
+  shine_node_api_ai_token: <%= ENV["GL_SHINE_NODE_API_AI_TOKEN"] %>
+  ai_teacher_api_token: <%= ENV["GL_AI_TEACHER_API_TOKEN"] %>
+  ai_teacher_ai_user_id: <%= ENV["GL_AI_TEACHER_AI_USER_ID"] %>
+  hls_cloudfront_url: <%= ENV["HLS_CLOUDFRONT_URL"] %>
+  hls_videos_bucket: 'hls-medias-iac-bkp'  
+  lti_s3_bucket: <%= ENV["LTI_S3_BUCKET"] %>
+  courses_s3_bucket: <%= ENV["COURSES_S3_BUCKET"] %>
+  sagemaker_host_name: 'https://glsagemakerv2.iac-greatlearning.org'
+  ai_base_url: 'https://aibe.iac-mygreatlearning.net'
+  ninja_base_url: https://stninja-central.iac-mygreatlearning.net
+  exotel_base_url: https://api.exotel.com/v1/Accounts/greatlearning7
+  exotel_api_key: <%= ENV["EXOTEL_API_KEY"] %>
+  exotel_api_token: <%= ENV["EXOTEL_API_TOKEN"] %>
+  twilio_insights_url: https://insights.twilio.com/v1/Voice
+  twilio_account_sid: <%= ENV["TWILIO_ACCOUNT_SID"] %>
+  twilio_auth_token: <%= ENV["TWILIO_AUTH_TOKEN"] %>
+  twilio_api_key: <%= ENV["TWILIO_API_KEY"] %>
+  twilio_api_secret: <%= ENV["TWILIO_API_SECRET"] %>
+  twilio_app_sid: <%= ENV["TWILIO_APP_SID"] %>
+  azure_tenant_id: <%= ENV["AZURE_TENANT_ID"] %>
+  azure_client_id: <%= ENV["AZURE_CLIENT_ID"] %>
+  azure_client_secret: <%= ENV["AZURE_CLIENT_SECRET"] %>
+  azure_user_encryption_passphrase: <%= ENV["AZURE_USER_ENCRYPTION_PASSPHRASE"] %>
+  lms_emails_to_domain: ['greatlearning.in', 'mygreatlearning.com', 'gl.in']
+  partner_base_domain: <%= ENV["PARTNER_BASE_DOMAIN"]%>
+  olympus_base_domain: <%= ENV["OLYMPUS_BASE_DOMAIN"]%>
+  weglot_api_key: <%= ENV["WEGLOT_API_KEY"] %>
+  hashid_salt: <%= ENV["HASHID_SALT"] %>
+  gl_transcribe_url: <%= ENV["GL_TRANSCRIBE_URL"] %>
+  shine_jedi_x_service_name: <%= ENV["SHINE_JEDI_X_SERVICE_NAME"] %>
+  shine_jedi_x_service_token: <%= ENV["SHINE_JEDI_X_SERVICE_TOKEN"] %>
+  cf_sign_private_key: <%= ENV['CF_SIGN_PRIVATE_KEY'] %>
+  cf_sign_key_pair_id: <%= ENV['CF_SIGN_KEY_PAIR_ID'] %>
+  lms_bucket_cdn_base_url: <%= ENV['LMS_BUCKET_CDN_BASE_URL'] %>
+  lti_internal_endpoint: <%= ENV['LTI_INTERNAL_ENDPOINT'] %>
+  lms_internal_endpoint: <%= ENV['LMS_INTERNAL_ENDPOINT'] %>
+  ai_internal_endpoint: <%= ENV['AI_INTERNAL_ENDPOINT'] %>
+  gl_sendgrid_events: <%= ENV["LTI_SENDGRID_EVENTS_QUEUE"] %>
+  aws_sqs_communication_tracking_queue: <%= ENV["COMMUNICATION_TRACKING_QUEUE"] %>
+  periskope_base_url: 'https://api.periskope.app/v1'
+  periskope_token: <%= ENV["PERISKOPE_TOKEN"] %>
+  aws_region: <%= ENV['AWS_REGION'] || 'us-east-1' %>
+  aws_mediaconvert_role_arn: <%= ENV['AWS_MEDIACONVERT_ROLE_ARN']%>
+  aws_mediaconvert_queue_arn: <%= ENV['AWS_MEDIACONVERT_QUEUE_ARN']%>
+  aws_mediaconvert_custom_preset_name_224p: <%= ENV['AWS_MEDIACONVERT_CUSTOM_PRESET_NAME_224P'] %>
+  aws_mediaconvert_custom_preset_name_360p: <%= ENV['AWS_MEDIACONVERT_CUSTOM_PRESET_NAME_360P'] %>
+  aws_mediaconvert_custom_preset_name_540p: <%= ENV['AWS_MEDIACONVERT_CUSTOM_PRESET_NAME_540P'] %>
+  aws_mediaconvert_custom_preset_name_720p: <%= ENV['AWS_MEDIACONVERT_CUSTOM_PRESET_NAME_720P'] %>
+  aws_mediaconvert_custom_preset_name_1080P: <%= ENV['AWS_MEDIACONVERT_CUSTOM_PRESET_NAME_1080P'] %>
+  aws_mediaconvert_custom_preset_name_download: <%= ENV['AWS_MEDIACONVERT_CUSTOM_PRESET_NAME_DOWNLOAD'] %>
+  aws_mediaconvert_encryption_key: <%= ENV['AWS_MEDIACONVERT_ENCRYPTION_KEY'] || '6fa1a80a5e1ceca9acd1954c50872465' %>
+  hls_medias_cloudfront_url: <%= ENV['HLS_MEDIAS_CLOUDFRONT_URL'] %>
+
+development:
+  <<: *defaults
+  web_developer_key_id: 6
+  mobile_developer_key_ids: [2,4]
+  gla_batch_ids: [122,126,581,2258]
+  demo_batch_ids: []
+  sagemaker_host_name: 'http://host.docker.internal:3010'
+  gl_payments_api_base_url: 'https://mgpayments-central.iac-mygreatlearning.net/api/v1'
+  cloud_front_distribution_prefix: <%= ENV['LTI_DEVELOPMENT_BUCKET_CLOUDFRONT_URL'] %>
+  lti_internal_endpoint: 'http://lti:3001'
+  lms_internal_endpoint: 'http://lms:3000'
+  allow_sqs_communication_tracking: false
+  gla_pro_batch_ids: [4776]
+
+staging:
+  <<: *defaults
+  web_developer_key_id: 6
+  mobile_developer_key_ids: [2,4]
+  ninja_messaging_queue: <%= ENV["NINJA_LTI_QUEUE"] %>
+  lti_hostname: https://mgninja.iac-mygreatlearning.net
+  lms_hostname: https://mgolympus.iac-mygreatlearning.net
+  website_hostname: https://w3migration.iac-mygreatlearning.net
+  eportfolio_base_url: 'https://eportfolio.iac-mygreatlearning.net'
+  gla_batch_ids: [554,581,584,2258]
+  demo_batch_ids: [477,524]
+  reform_base_url: 'https://mgreform.iac-mygreatlearning.net'
+  hls_videos_bucket: 'hls-medias-iac-bkp'
+  sagemaker_host_name: 'https://glsagemakerv2.iac-greatlearning.org'
+  ai_base_url: 'https://aibe.iac-mygreatlearning.net'
+  gl_payments_api_base_url: 'https://mgpayments-central.iac-mygreatlearning.net/api/v1'
+  cloud_front_distribution_prefix: <%= ENV['LTI_MIGRATION_BUCKET_CLOUDFRONT_URL'] %>
+  gla_pro_batch_ids: [4776]
+
+
+test:
+  <<: *defaults
+  cloud_front_distribution_prefix: https://d9jmtjs5r4cgq.cloudfront.net
+
+
+production:
+  <<: *defaults
+  web_developer_key_id: 6
+  mobile_developer_key_ids: [2,4]
+  ninja_messaging_queue: <%= ENV["NINJA_LTI_QUEUE"] %>
+  lti_hostname: https://ninja.mygreatlearning.com
+  lms_hostname: https://olympus.mygreatlearning.com
+  website_hostname: https://mygreatlearning.com
+  eportfolio_base_url: 'https://eportfolio.mygreatlearning.com'
+  gla_batch_ids: [554,581,584,9878]
+  demo_batch_ids: [749]
+  reform_base_url: 'https://reform.mygreatlearning.com'
+  hls_videos_bucket: 'hls-medias'
+  sagemaker_host_name: 'https://glsagemaker2.glinternal.in'
+  ai_base_url: 'https://aibe.mygreatlearning.com'
+  ninja_base_url: https://ninja-central.mygreatlearning.com
+  gl_payments_api_base_url: 'https://payments-central.mygreatlearning.com/api/v1'
+  cloud_front_distribution_prefix: <%= ENV['PROD_ASSET_CLOUDFRONT_URL'] %>
+  gla_pro_batch_ids: [19032]
